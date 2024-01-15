@@ -22,6 +22,8 @@ Start the app:
 yarn dev
 ```
 
+Frontend will be available at [localhost:3000](http://localhost:3000) and backend at [localhost:3000/api/docs](http://localhost:3000/api/docs)
+
 ## What's inside?
 
 This Turborepo includes the following packages/apps:

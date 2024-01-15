@@ -3,28 +3,37 @@ module.exports = {
   content: ['./(app|src)/**/*.{js,ts,jsx,tsx,mdx}'],
   theme: {
     extend: {},
+    colors: {
+      stale: {
+        100: '#C3C8D4',
+        700: '#224957',
+        800: '#093545',
+        900: '#092C39',
+      },
+    },
+    fontSize: {
+      sm: ['0.75rem', '1.5rem'],
+      xl: ['1rem', '1.5rem'],
+      '2xl': ['1.25rem', '1.5rem'],
+      '3xl': ['1.5rem', '2rem'],
+      '4xl': ['2rem', '2.5rem'],
+      '5xl': ['3rem', '3.5rem'],
+      '6xl': ['4rem', '5rem'],
+    },
   },
   daisyui: {
     themes: [
       {
         mytheme: {
-          primary: '#1f53a6',
-
+          primary: '#2BD17E',
           secondary: '#ffffff',
-
-          accent: '#d4f8de',
-
+          accent: '#093545',
           neutral: '#ffffff',
-
           'base-100': '#fff',
-
-          info: 'lightblue',
-
-          success: '#319060',
-
-          warning: 'yellow',
-
-          error: 'red',
+          info: '#7B6EF6',
+          success: '#2BD17E',
+          warning: '#224957',
+          error: '#2BD17E',
         },
       },
     ],

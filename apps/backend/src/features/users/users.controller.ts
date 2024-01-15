@@ -1,4 +1,4 @@
-import { Controller, Get, Param } from '@nestjs/common';
+import { Controller, Get, Param, ParseUUIDPipe } from '@nestjs/common';
 import { ApiForbiddenResponse, ApiNotFoundResponse, ApiParam, ApiTags } from '@nestjs/swagger';
 
 import { Authorized } from '../auth';
@@ -16,7 +16,7 @@ export class UsersController {
   @ApiParam({ name: 'id', type: 'string' })
   @Authorized()
   @Get(':id')
-  findOne(@Param() id: string) {
+  findOne(@Param('id', new ParseUUIDPipe()) id: string) {
     return this.usersService.findOne(id);
   }
 }

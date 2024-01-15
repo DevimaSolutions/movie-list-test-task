@@ -1,4 +1,26 @@
 @tailwind base;
+
+@layer base {
+  h1 {
+    @apply text-6xl;
+  }
+  h2 {
+    @apply text-5xl;
+  }
+  h3 {
+    @apply text-4xl;
+  }
+  h4 {
+    @apply text-3xl;
+  }
+  h5 {
+    @apply text-2xl;
+  }
+  h6 {
+    @apply text-xl;
+  }
+}
+
 @tailwind components;
 @tailwind utilities;
 
@@ -10,12 +32,20 @@ html {
 body {
   margin: 0;
   padding: 0;
+  color: theme(colors.stale.100);
+  background-color: theme(colors.stale.800);
+}
+body::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  height: 111px;
+  width: 100%;
+  background-image: url(/assets/bg.svg);
+  background-size: 100% 100%;
 }
 *,
 *:before,
 *:after {
   box-sizing: inherit;
-}
-.grecaptcha-badge {
-  visibility: hidden;
 }
