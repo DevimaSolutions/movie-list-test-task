@@ -23,7 +23,7 @@ const useDropzoneInput = ({
     return () => {
       URL.revokeObjectURL(url);
     };
-  }, [defaultPreview, field, field.value]);
+  }, [defaultPreview, field.value]);
 
   const onDrop = useCallback(
     async (acceptedFiles: File[], fileRejections: FileRejection[], e: DropEvent) => {
