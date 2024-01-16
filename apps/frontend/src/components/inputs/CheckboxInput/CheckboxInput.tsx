@@ -13,18 +13,21 @@ export default function CheckboxInput({
 }: CheckboxInputProps) {
   return (
     <div>
-      <label {...labelProps} className="label p-0 justify-normal gap-3 cursor-pointer">
+      <label
+        {...labelProps}
+        className={clsx('label p-0 gap-2 cursor-pointer font-light', labelProps?.className)}
+      >
         <input
           checked={Boolean(values[field.name])}
           onChange={(e) => setFieldValue(field.name, e.target.checked)}
           type="checkbox"
           {...props}
           className={clsx(
-            'checkbox border-solid border-[2px] border-primary checked:border-primary [--chkbg:theme(colors.primary)] [--chkfg:white]',
+            'checkbox border-solid border-[2px] bg-stale-700 checked:border-primary [--chkbg:theme(colors.primary)] [--chkfg:white]',
             className,
           )}
         />
-        <span className="label-text">{label}</span>
+        <span className="label-text text-secondary">{label}</span>
       </label>
       <label
         {...errorProps}

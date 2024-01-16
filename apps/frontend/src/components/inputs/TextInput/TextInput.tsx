@@ -13,6 +13,7 @@ export function TextInput({
   errorProps,
   ...props
 }: TextInputProps) {
+  const hasError = touched[field.name] && errors[field.name];
   return (
     <div>
       {label ? (
@@ -24,7 +25,9 @@ export function TextInput({
         type={type}
         {...field}
         {...props}
-        className={clsx('input input-bordered w-full input-primary mt-2', className)}
+        className={clsx('input input-bordered  w-full mt-2', className, {
+          'input-error': hasError,
+        })}
       />
       <label
         {...errorProps}
@@ -33,7 +36,7 @@ export function TextInput({
           errorProps?.className,
         )}
       >
-        {touched[field.name] && errors[field.name] ? errors[field.name] : null}
+        {hasError ? errors[field.name] : null}
       </label>
     </div>
   );

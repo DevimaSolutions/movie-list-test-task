@@ -20,20 +20,37 @@ module.exports = {
       '5xl': ['3rem', '3.5rem'],
       '6xl': ['4rem', '5rem'],
     },
+    fontFamily: {
+      sans: ['var(--font-montserrat)'],
+    },
   },
   daisyui: {
     themes: [
       {
         mytheme: {
           primary: '#2BD17E',
-          secondary: '#ffffff',
+          secondary: '#FFF',
           accent: '#093545',
-          neutral: '#ffffff',
-          'base-100': '#fff',
+          neutral: '#FFF',
+          'base-100': '#FFF',
           info: '#7B6EF6',
           success: '#2BD17E',
           warning: '#224957',
-          error: '#2BD17E',
+          error: '#EB5757',
+          '.btn-primary': {
+            color: '#FFF',
+            'font-size': '1rem',
+            'line-height': '1.5rem',
+            height: '4rem',
+          },
+          '.input': {
+            'background-color': '#224957',
+            color: '#FFF',
+            'font-weight': 300,
+          },
+          'input::placeholder': {
+            color: '#FFF',
+          },
         },
       },
     ],
@@ -43,7 +60,7 @@ module.exports = {
     utils: true, // adds responsive and modifier utility classes
     prefix: '', // prefix for daisyUI classnames (components, modifiers and responsive class names. Not colors)
     logs: false, // Shows info about daisyUI version and used config in the console when building your CSS
-    themeRoot: ':root', //
+    themeRoot: ':root',
   },
   plugins: [require('daisyui')],
   corePlugins: {

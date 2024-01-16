@@ -1,9 +1,9 @@
 'use client';
 
 import { Field, Form, Formik } from 'formik';
-import Link from 'next/link';
 import { toFormikValidationSchema } from 'zod-formik-adapter';
 
+import CheckboxInput from 'src/components/inputs/CheckboxInput';
 import PasswordInput from 'src/components/inputs/PasswordInput';
 import TextInput from 'src/components/inputs/TextInput';
 
@@ -25,29 +25,21 @@ export function SignInForm({ onSubmit }: SignInFormProps) {
       validationSchema={toFormikValidationSchema(signInSchema)}
     >
       {({ isSubmitting }) => (
-        <Form className="space-y-3">
+        <Form className="space-y-1">
+          <Field component={TextInput} name="email" placeholder="Email" type="email" />
+          <Field component={PasswordInput} name="password" placeholder="Password" />
           <Field
-            component={TextInput}
-            label="Email address"
-            name="email"
-            placeholder="email"
-            type="email"
+            component={CheckboxInput}
+            label="Remember me"
+            labelProps={{ className: 'justify-center' }}
+            name="remember"
           />
-          <Field
-            component={PasswordInput}
-            label="Password"
-            name="password"
-            placeholder="password"
-          />
-          <Link className="link link-primary" href="/forgot-password">
-            Forgot password?
-          </Link>
           <button
             className="flex w-full justify-center btn btn-primary"
             disabled={isSubmitting}
             type="submit"
           >
-            Sign in
+            Login
           </button>
         </Form>
       )}

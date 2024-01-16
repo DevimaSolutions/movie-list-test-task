@@ -11,9 +11,7 @@ export function SignIn() {
 
   return (
     <>
-      <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
-        Sign in to your account
-      </h2>
+      <h1 className="text-center text-secondary mb-8">Sign in</h1>
       <SignInForm onSubmit={onSubmit} />
       <p className="flex w-full justify-center gap-2">
         Don&apos;t have an account?{' '}

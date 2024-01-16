@@ -18,6 +18,8 @@ export function PasswordInput({
     setShowPassword((prev) => !prev);
   };
 
+  const hasError = touched[field.name] && errors[field.name];
+
   return (
     <div>
       {label ? (
@@ -30,7 +32,9 @@ export function PasswordInput({
           type={showPassword ? 'text' : 'password'}
           {...field}
           {...props}
-          className={clsx('input input-bordered w-full input-primary pr-11', className)}
+          className={clsx('input input-bordered w-full pr-11', className, {
+            'input-error': hasError,
+          })}
         />
         {showPassword ? (
           <EyeIcon
@@ -51,7 +55,7 @@ export function PasswordInput({
           errorProps?.className,
         )}
       >
-        {touched[field.name] && errors[field.name] ? errors[field.name] : null}
+        {hasError ? errors[field.name] : null}
       </label>
     </div>
   );
