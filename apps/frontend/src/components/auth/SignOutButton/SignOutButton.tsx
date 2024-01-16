@@ -1,6 +1,6 @@
 'use client';
 
-import { ArrowRightOnRectangleIcon } from '@heroicons/react/24/outline';
+import { ArrowUpTrayIcon } from '@heroicons/react/24/solid';
 import clsx from 'clsx';
 import { signOut } from 'next-auth/react';
 
@@ -13,13 +13,13 @@ export function SignOutButton({ className, ...props }: ButtonHTMLAttributes<HTML
 
   return (
     <button
-      className={clsx('bg-white text-black hover:bg-slate-100 border-none', className)}
+      className={clsx('max-h-10 btn btn-ghost', className)}
       onClick={onSignOut}
       type="button"
       {...props}
     >
-      <ArrowRightOnRectangleIcon className="w-4 h-4" />
-      Sign out
+      Logout
+      <ArrowUpTrayIcon className="w-6 h-6 sm:w-8 sm:h-8 rotate-90" />
     </button>
   );
 }

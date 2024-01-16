@@ -20,6 +20,7 @@ export const useCreateMovieScreen = () => {
       return;
     }
     router.push('/');
+    router.refresh();
   };
 
   return { onCreateMovie };

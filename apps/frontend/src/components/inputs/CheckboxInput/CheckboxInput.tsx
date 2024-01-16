@@ -23,11 +23,11 @@ export default function CheckboxInput({
           type="checkbox"
           {...props}
           className={clsx(
-            'checkbox border-solid border-[2px] bg-stale-700 checked:border-primary [--chkbg:theme(colors.primary)] [--chkfg:white]',
+            'checkbox border-solid text-secondary border-[2px] bg-stale-700 checked:border-primary [--chkbg:theme(colors.primary)] [--chkfg:white]',
             className,
           )}
         />
-        <span className="label-text">{label}</span>
+        <span className="label-text text-secondary">{label}</span>
       </label>
       <label
         {...errorProps}

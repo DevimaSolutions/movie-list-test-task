@@ -45,7 +45,7 @@ export class AuthService {
   async validateUserPayload(token: string | undefined): Promise<User | null> {
     try {
       const payload = await decode({ token, secret: this.config.auth.jwtSecret });
-
+      console.log({ payload });
       if (!payload?.sub) {
         return null;
       }
@@ -53,6 +53,7 @@ export class AuthService {
       const user = await this.usersService.findOne(payload.sub);
       return user;
     } catch (e) {
+      console.error(e);
       // User was not found
       return null;
     }

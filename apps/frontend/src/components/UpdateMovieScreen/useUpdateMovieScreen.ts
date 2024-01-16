@@ -20,6 +20,7 @@ export const useUpdateMovieScreen = (movie: Movie) => {
       return;
     }
     router.push('/');
+    router.refresh();
   };
 
   return { onUpdateMovie };

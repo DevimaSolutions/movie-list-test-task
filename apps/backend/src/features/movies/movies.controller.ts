@@ -63,7 +63,6 @@ export class MoviesController {
     @Req() req: RequestWithUser,
     @Body(new ZodValidationPipe(createMovieSchema)) createMovieDto: CreateMovieDto,
   ) {
-    console.log(createMovieDto);
     return this.moviesService.create(req.user.id, createMovieDto);
   }
 
