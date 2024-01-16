@@ -5,4 +5,5 @@ import type { ZodType } from 'zod';
 export type MovieFormProps<TValues extends CreateMovieDto | UpdateMovieDto> = {
   movie?: TValues extends UpdateMovieDto ? Movie : never;
   validationSchema?: ZodType;
+  isSubmitDisabled?: boolean;
 } & Pick<FormikConfig<TValues>, 'onSubmit'>;

@@ -15,6 +15,7 @@ import type { CreateMovieDto, UpdateMovieDto } from 'api-client';
 export function MovieForm<TValues extends CreateMovieDto | UpdateMovieDto>({
   movie,
   validationSchema,
+  isSubmitDisabled,
   onSubmit,
 }: MovieFormProps<TValues>) {
   const initialValues = useMemo<UpdateMovieDto>(
@@ -54,7 +55,11 @@ export function MovieForm<TValues extends CreateMovieDto | UpdateMovieDto>({
             <Link className="btn btn-outline grow" href="/">
               Cancel
             </Link>
-            <button className="grow btn btn-primary" disabled={isSubmitting} type="submit">
+            <button
+              className="grow btn btn-primary"
+              disabled={isSubmitting || isSubmitDisabled}
+              type="submit"
+            >
               Submit
             </button>
           </div>
