@@ -7,6 +7,7 @@ import { getTypeOrmModuleOptions } from 'src/config/db.config';
 import envConfig from 'src/config/env.config';
 import { AuthModule } from 'src/features/auth/auth.module';
 import { FileUploadModule } from 'src/features/file-upload/file-upload.module';
+import { MoviesModule } from 'src/features/movies/movies.module';
 import { UsersModule } from 'src/features/users/users.module';
 
 import { AppController } from './app.controller';
@@ -23,6 +24,7 @@ import { AppService } from './app.service';
     FileUploadModule.forRoot(),
     AuthModule,
     UsersModule,
+    MoviesModule,
   ],
   controllers: [AppController],
   providers: [
