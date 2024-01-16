@@ -11,9 +11,27 @@ export const singleImageUploadLimits = {
   files: 1,
 };
 
+export const imageMimeTypes = [
+  mimeTypes.jpeg,
+  mimeTypes.jpg,
+  mimeTypes.png,
+  mimeTypes.webp,
+  mimeTypes.gif,
+];
+
+// map mime types into react-dropzone format
+export const acceptImageMimeTypes = imageMimeTypes.reduce<Record<string, string[]>>(
+  (acc, mimeType) => ({
+    ...acc,
+    [mimeType]: [],
+  }),
+  {},
+);
+
 const fileConstants = {
   mimeTypes,
-  imageMimeTypes: [mimeTypes.jpeg, mimeTypes.jpg, mimeTypes.png, mimeTypes.webp, mimeTypes.gif],
+  imageMimeTypes,
+  acceptImageMimeTypes,
   singleImageUploadLimits,
 };
 

@@ -48,6 +48,13 @@ export class MoviesController {
     return this.moviesService.paginateByUserId(req.user.id, query);
   }
 
+  @ApiNotFoundResponse({ type: () => ErrorDto })
+  @Authorized()
+  @Get(':id')
+  getMovieById(@Req() req: RequestWithUser, @Param('id', new ParseUUIDPipe()) movieId: string) {
+    return this.moviesService.findOne(movieId, { where: { userId: req.user.id } });
+  }
+
   @ApiBadRequestResponse({ type: () => ValidationErrorDto })
   @IncludeFileUpload(CreateMovieDto)
   @Authorized()
@@ -56,6 +63,7 @@ export class MoviesController {
     @Req() req: RequestWithUser,
     @Body(new ZodValidationPipe(createMovieSchema)) createMovieDto: CreateMovieDto,
   ) {
+    console.log(createMovieDto);
     return this.moviesService.create(req.user.id, createMovieDto);
   }
 

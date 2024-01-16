@@ -3,7 +3,7 @@ import React from 'react';
 
 import useFileInput from './useFileInput';
 
-import type { FiletInputProps } from './types';
+import type { FileInputProps } from './types';
 
 export function FileInput({
   field,
@@ -14,7 +14,7 @@ export function FileInput({
   errorProps,
   multiple,
   ...props
-}: FiletInputProps) {
+}: FileInputProps) {
   const { handleChange } = useFileInput({
     field,
     multiple,

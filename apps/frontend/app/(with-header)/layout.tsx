@@ -2,10 +2,12 @@ import { ToastContainer } from 'react-toastify';
 
 import type { PropsWithChildren } from 'react';
 
-export default function RootLayout({ children }: PropsWithChildren) {
+import 'react-toastify/dist/ReactToastify.css';
+
+export default function Layout({ children }: PropsWithChildren) {
   return (
     <>
-      {children}
+      <main className="pb-[111px] min-h-[100vh]">{children}</main>
       <ToastContainer />
     </>
   );

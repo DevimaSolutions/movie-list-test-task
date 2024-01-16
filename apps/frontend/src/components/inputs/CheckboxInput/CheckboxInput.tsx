@@ -27,7 +27,7 @@ export default function CheckboxInput({
             className,
           )}
         />
-        <span className="label-text text-secondary">{label}</span>
+        <span className="label-text">{label}</span>
       </label>
       <label
         {...errorProps}

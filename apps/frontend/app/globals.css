@@ -38,19 +38,12 @@ html {
 body {
   margin: 0;
   padding: 0;
-  color: theme(colors.stale.100);
-  background-color: theme(colors.stale.800);
+  color: #fff;
+  background: theme(colors.stale.800) url(/assets/bg.svg) no-repeat bottom;
+  background-size: 100% 111px;
   letter-spacing: 0.02rem;
 }
-body::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  height: 111px;
-  width: 100%;
-  background-image: url(/assets/bg.svg);
-  background-size: 100% 100%;
-}
+
 button,
 input,
 optgroup,

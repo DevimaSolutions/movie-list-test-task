@@ -33,15 +33,25 @@ module.exports = {
           accent: '#093545',
           neutral: '#FFF',
           'base-100': '#FFF',
+          'base-content': '#092C39',
           info: '#7B6EF6',
           success: '#2BD17E',
           warning: '#224957',
           error: '#EB5757',
-          '.btn-primary': {
+          '.btn': {
             color: '#FFF',
             'font-size': '1rem',
             'line-height': '1.5rem',
             height: '4rem',
+          },
+          '.btn-outline': {
+            'border-style': 'solid',
+          },
+          '.btn-outline:hover': {
+            // 'background-color': '#22495780',
+          },
+          '.btn-outline:focus-visible': {
+            // 'outline-color': '#224957',
           },
           '.input': {
             'background-color': '#224957',

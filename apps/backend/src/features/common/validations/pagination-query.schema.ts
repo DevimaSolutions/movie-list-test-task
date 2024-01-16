@@ -21,6 +21,6 @@ const safePreprocessor =
   };
 
 export const paginationQuerySchema = z.object({
-  limit: z.preprocess(safePreprocessor(stringToNumberSchema()), z.number().default(10)),
+  limit: z.preprocess(safePreprocessor(stringToNumberSchema()), z.number().default(8)),
   offset: z.preprocess(safePreprocessor(stringToNumberSchema()), z.number().default(0)),
 });

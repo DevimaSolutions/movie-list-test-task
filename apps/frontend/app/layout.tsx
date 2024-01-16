@@ -7,7 +7,6 @@ import type { Metadata } from 'next';
 import type { PropsWithChildren } from 'react';
 
 import './globals.css';
-import 'react-toastify/dist/ReactToastify.css';
 
 const montserrat = Montserrat({
   subsets: ['latin'],
@@ -18,7 +17,7 @@ const env = envUtil.getEnv();
 
 export const metadata: Metadata = {
   title: env.appName,
-  description: 'Movie list test task',
+  description: 'My Movies list',
 };
 
 export default function RootLayout({ children }: PropsWithChildren) {

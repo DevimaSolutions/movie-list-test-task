@@ -1,13 +1,13 @@
 import { useCallback } from 'react';
 
-import type { FiletInputProps } from './types';
+import type { FileInputProps } from './types';
 import type { ChangeEvent } from 'react';
 
 const useFileInput = ({
   field,
   form: { setFieldValue },
   multiple,
-}: Pick<FiletInputProps, 'multiple' | 'field' | 'form'>) => {
+}: Pick<FileInputProps, 'multiple' | 'field' | 'form'>) => {
   const handleChange = useCallback(
     async (event: ChangeEvent<HTMLInputElement>) => {
       if (!event.target.files?.length) {

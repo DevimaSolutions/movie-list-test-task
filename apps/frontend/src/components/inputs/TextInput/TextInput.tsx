@@ -9,13 +9,15 @@ export function TextInput({
   label,
   type = 'text',
   className,
+  rootClassName,
   labelProps,
   errorProps,
   ...props
 }: TextInputProps) {
   const hasError = touched[field.name] && errors[field.name];
+
   return (
-    <div>
+    <div className={rootClassName}>
       {label ? (
         <label {...labelProps} className={clsx('label p-0', labelProps?.className)}>
           {label}
